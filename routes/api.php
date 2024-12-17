@@ -5,6 +5,7 @@ use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\ReportController;
 // Routes liên quan đến Auth
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -35,4 +36,18 @@ Route::middleware([AuthMiddleware::class])->group(function () {
     Route::post('/order_items', [OrderItemController::class, 'store']);
     Route::put('/order_items/{id}', [OrderItemController::class, 'update']);
     Route::delete('/order_items/{id}', [OrderItemController::class, 'destroy']);
+    //bai5
+    Route::prefix('reports')->group(function () {
+        // Báo cáo sản phẩm
+        Route::get('products', [ReportController::class, 'getProductsReports']);
+        Route::get('products/{id}', [ReportController::class, 'getProductReport']);
+        Route::post('products', [ReportController::class, 'createProductReport']);
+        Route::delete('products/{id}', [ReportController::class, 'deleteProductReport']);
+        
+        // Báo cáo đơn hàng
+        Route::get('orders', [ReportController::class, 'getOrdersReports']);
+        Route::get('orders/{id}', [ReportController::class, 'getOrderReport']);
+        Route::post('orders', [ReportController::class, 'createOrderReport']);
+        Route::delete('orders/{id}', [ReportController::class, 'deleteOrderReport']);
+    });
 });
