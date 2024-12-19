@@ -1,0 +1,198 @@
+/* Error message styling */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Product list title */
+  .product-list-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2e3b4e;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Product card container */
+  .product-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Hover effect for product card */
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Product name styling */
+  .product-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* Product description styling */
+  .product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+  
+  /* Price styling */
+  .product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  
+  /* Nền mờ phía sau modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Màu nền đen mờ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Hiển thị phía trên các thành phần khác */
+}
+
+/* Nội dung modal */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%; /* Giới hạn độ rộng trên thiết bị nhỏ */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng đẹp */
+  animation: fadeIn 0.3s ease-out; /* Hiệu ứng mở modal */
+}
+
+/* Nút trong modal */
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Nút Save */
+button[type="submit"] {
+  background-color: #4CAF50; /* Màu xanh */
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049; /* Hover màu xanh đậm hơn */
+}
+
+/* Nút Cancel */
+button[type="button"] {
+  background-color: #f44336; /* Màu đỏ */
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #e53935; /* Hover màu đỏ đậm hơn */
+}
+
+/* Hiệu ứng mở modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Nhỏ hơn ban đầu */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Kích thước bình thường */
+  }
+}
+
+/* Nhãn và input */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.orders-button {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Add padding around the button */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect */
+.orders-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+/* Focus effect */
+.orders-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue glow effect when focused */
+}
+
+
+/* Responsive modal */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+  
+  /* Make the layout responsive */
+  @media (min-width: 768px) {
+    .product-card {
+      display: inline-block;
+      width: 45%;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .product-card {
+      width: 90%;
+      margin: 10px auto;
+    }
+  }
+  

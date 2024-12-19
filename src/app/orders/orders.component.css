@@ -1,0 +1,196 @@
+/* orders.component.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  thead tr {
+    background-color: #f8f8f8;
+    text-align: left;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  /* General styles for the page */
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Button to create order */
+  .create-order-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .create-order-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form input fields */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  /* Buttons */
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-cancel {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #e53935;
+  }
+  
+  /* Order Table */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .order-table th, .order-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .order-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .order-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .order-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  /* Nút với biểu tượng */
+.btn-update-status {
+    display: flex;
+    align-items: center;
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px; /* Bo góc cho nút */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+  }
+  
+  .btn-update-status i {
+    margin-right: 8px;  /* Khoảng cách giữa biểu tượng và text */
+    font-size: 20px; /* Kích thước biểu tượng */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hiệu ứng khi hover vào nút */
+  .btn-update-status:hover {
+    background-color: #218838; /* Màu xanh đậm hơn khi hover */
+    transform: translateY(-2px); /* Đẩy nút lên khi hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ khi hover */
+  }
+  
+  /* Hiệu ứng khi click */
+  .btn-update-status:active {
+    transform: translateY(1px); /* Đẩy nút xuống khi click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Bóng đổ nhẹ khi click */
+  }
+  
+  /* Hiệu ứng khi có focus */
+  .btn-update-status:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5); /* Tạo viền sáng khi focus */
+  }
+  

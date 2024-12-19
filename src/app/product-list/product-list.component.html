@@ -1,0 +1,44 @@
+<div *ngIf="error" class="error-message">
+  <p>{{ error }}</p>
+</div>
+
+<div *ngIf="!error">
+  <h2 class="product-list-title">Product List</h2>
+  <div *ngFor="let product of products" class="product-card">
+    <h3 class="product-name">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description || 'No description available' }}</p>
+    <p class="product-price">Price: ${{ product.price }}</p>
+    <p class="product-quantity">Quantity: {{ product.quantity }}</p>
+    <button (click)="openEditModal(product)">Edit</button>
+  </div>
+</div>
+<button (click)="navigateToOrders()" class="orders-button">Orders</button>
+<!-- Modal -->
+<!-- Modal -->
+<div *ngIf="showModal && selectedProduct" class="modal-overlay">
+  <div class="modal-content">
+    <h3>Edit Product</h3>
+    <form (ngSubmit)="updateProduct()">
+      <label>
+        Name:
+        <input [(ngModel)]="selectedProduct.name" name="name" required />
+      </label>
+      <label>
+        Description:
+        <input [(ngModel)]="selectedProduct.description" name="description" />
+      </label>
+      <label>
+        Price:
+        <input [(ngModel)]="selectedProduct.price" name="price" type="number" step="0.01" required />
+      </label>
+      <label>
+        Quantity:
+        <input [(ngModel)]="selectedProduct.quantity" name="quantity" type="number" required />
+      </label>
+      <div class="form-actions">
+        <button type="submit" [disabled]="!selectedProduct.name || !selectedProduct.price || !selectedProduct.quantity">Save</button>
+        <button type="button" (click)="closeModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

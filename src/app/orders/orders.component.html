@@ -1,0 +1,75 @@
+<!-- Display error message if there is any error -->
+<div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+  
+  <!-- Button to open Create Order Modal -->
+  <button (click)="openModal()" class="create-order-btn">Create Order</button>
+  
+  <!-- Modal for creating a new order -->
+  <div *ngIf="showModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Create New Order</h2>
+      <form (ngSubmit)="createOrder()">
+        <div class="form-group">
+          <label for="customerName">Customer Name:</label>
+          <input id="customerName" [(ngModel)]="newOrder.customer_name" name="customer_name" required class="input-field"/>
+        </div>
+        <div class="form-group">
+          <label for="customerEmail">Customer Email:</label>
+          <input id="customerEmail" [(ngModel)]="newOrder.customer_email" name="customer_email" required class="input-field"/>
+        </div>
+        <div class="form-group">
+          <label for="totalAmount">Total Amount:</label>
+          <input id="totalAmount" [(ngModel)]="newOrder.total_amount" name="total_amount" type="number" required class="input-field"/>
+        </div>
+        <div class="modal-buttons">
+          <button type="submit" class="btn-submit">Create Order</button>
+          <button type="button" (click)="closeModal()" class="btn-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Display order list -->
+  <div *ngIf="!error && orders.length > 0">
+    <h2>Order List</h2>
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer Name</th>
+          <th>Customer Email</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Created At</th>
+          <th>Actions</th>  <!-- Thêm cột hành động -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.customer_name }}</td>
+          <td>{{ order.customer_email }}</td>
+          <td>{{ order.total_amount | currency }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.created_at | date: 'short' }}</td>
+          <td>
+            <!-- Nút để cập nhật trạng thái đơn hàng với biểu tượng -->
+            <button *ngIf="order.status !== 'completed'" 
+        (click)="updateOrderStatus(order.id, 'completed')" 
+        class="btn-update-status">
+  <i class="fas fa-check-circle"></i> Mark as Completed
+</button>
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Message when there are no orders -->
+  <div *ngIf="!orders.length && !error">
+    <p>No orders found.</p>
+  </div>
+  
